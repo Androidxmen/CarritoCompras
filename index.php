@@ -48,7 +48,6 @@
 <body>
     <!-- Menu de navegación -->
     <header>
-    
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="index.php">Tienda online</a>
@@ -97,7 +96,7 @@
                             <div class="card shadow-sm">
                                 <?php
                             $id = $pro_row['id'];
-                            $imagen = "resource/images/productos/".$id."/principal.jpg";
+                            $imagen = "resource/images/productos/". $id . "/principal.jpg";
 
                             if(!file_exists($imagen)){
                                 $imagen = "resource/images/not-image.jpg";
@@ -115,7 +114,6 @@
                                             <a href="" class="btn btn-primary">Detalles</a>
                                         </div>
                                         <a class="btn btn-success">Agregar</a>
-                                        hla
                                     </div>
                                 </div>
                             </div>
