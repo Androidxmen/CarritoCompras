@@ -104,10 +104,10 @@ if ($id == '' || $token == '') {
                         </li>
                     </ul>
 
-                   
+
 
                     <a href="checkout.php" class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i> Carrito <span id="num_cart" class="badge bg-secondary"><?php echo $num_carrito;?></span>
+                        <i class="fas fa-shopping-cart"></i> Carrito <span id="num_cart" class="badge bg-secondary"><?php echo $num_carrito; ?></span>
                     </a>
                 </div>
             </div>
@@ -174,7 +174,7 @@ if ($id == '' || $token == '') {
                             </div>
 
                             <div class="d-grid gap-3 col-7">
-                                <button class="btn btn-outline-primary" type="button" onClick="addProducto('<?php echo $id;?>','<?php echo $token_tmp;?>')">Agregar al carrito</button>
+                                <button class="btn btn-outline-primary" type="button" onClick="addProducto('<?php echo $id; ?>','<?php echo $token_tmp; ?>')">Agregar al carrito</button>
                             </div>
                         </div>
                     </div>
@@ -183,26 +183,24 @@ if ($id == '' || $token == '') {
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
             <script>
-                
-                function addProducto(id, token){
+                function addProducto(id, token) {
                     let url = 'clases/carrito.php';
                     let formData = new FormData();
                     formData.append('id', id)
-                    
+
                     console.log(formData.append('token', token))
 
                     fetch(url, {
                         method: 'POST',
                         body: formData,
                         mode: 'cors'
-                    }).then(response => response.json()).then(data =>{
-                        if(data.ok){
+                    }).then(response => response.json()).then(data => {
+                        if (data.ok) {
                             let elemento = document.getElementById('num_cart')
                             elemento.innerHTML = data.numero
                         }
                     })
                 }
-            
             </script>
 </body>
 
